@@ -1,0 +1,51 @@
+class Figure:
+    def __init__(self, coords, width, color):
+        self.coords = coords
+        self.width = width
+        self.color = color
+    
+    def draw(self):
+        print("Рисуется фигура")
+
+class Line(Figure):
+    def __init__(self, coords, width, color, length):
+        super().__init__(coords, width, color)
+        self.length = length
+    
+    def draw(self):
+        print("Рисуется линия")
+
+class Rect(Figure):
+    def __init__(self, coords, width, color, height):
+        super().__init__(coords, width, color)
+        self.height = height
+    
+    def draw(self):
+        print("Рисуется прямоугольник")
+
+class Ellipse(Figure):
+    def __init__(self, coords, width, color, radius):
+        super().__init__(coords, width, color)
+        self.radius = radius
+    
+    def draw(self):
+        print("Рисуется эллипс")
+
+class Triangle(Figure):
+    def __init__(self, coords, width, color, base, height):
+        super().__init__(coords, width, color)
+        self.base = base
+        self.height = height
+    
+    def draw(self):
+        print("Рисуется треугольник")
+
+figures = [
+    Line((0, 0), 2, "красный", 10),
+    Rect((5, 5), 4, "синий", 6),
+    Ellipse((10, 10), 3, "зелёный", 5),
+    Triangle((15, 15), 5, "жёлтый", 8, 6)
+]
+
+for figure in figures:
+    figure.draw()
